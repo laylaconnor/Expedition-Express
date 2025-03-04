@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expedition Express</title>
+    <link rel="stylesheet" href="design1.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Expedition Express</h1>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Dining</a></li>
+                <li><a href="#">Activities</a></li>
+                <li><a href="#">Budget</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn">Sign In</button>
+                <button class="btn primary">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h2>Your Journey Begins Here</h2>
+            <p>Plan your next adventure with ease.</p>
+            <button class="btn">Start Planning</button>
+        </div>
+    </header>
+
+    <!-- Image Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div class="carousel">
+                <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
+                <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
+                
+                <div class="carousel-container">
+                    <div class="carousel-slide active">
+                        <img src="images/baliVacay.jpg" alt="Bali">
+                        <div class="slide-caption">Bali</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/skiVacay.jpg" alt="Ski Resort">
+                        <div class="slide-caption">Ski Resort</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="images/tropicalVacay.jpg" alt="Tropical Beach">
+                        <div class="slide-caption">Tropical Getaway</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Planning Info Section -->
+    <section class="travel-info">
+        <div class="container">
+            <h2>Plan a Successful Trip</h2>
+            <p>At Expedition Express, our goal is to help you craft the perfect journey. Whether it's finding the best destinations, exploring delicious cuisines, or budgeting wisely, we provide expert tips and tricks to make your travels stress-free and enjoyable.</p>
+        </div>
+    </section>
+
+    <!-- JavaScript for Carousel -->
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("carousel-slide");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000);
+        }
+
+        function moveSlide(n) {
+            slideIndex += n - 1;
+            showSlides();
+        }
+    </script>
+
+</body>
+</html>
