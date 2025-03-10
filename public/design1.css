@@ -213,6 +213,134 @@ body {
     color: #555;
 }
 
+/* Site Purpose Box Styles */
+.purpose-box {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #4a90e2;
+}
+
+.info-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+.info-card strong {
+    color: #4a90e2;
+}
+
+.info-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+/* Split Content Layout */
+.split-info-section {
+    padding: 50px 0;
+    background-color: #f9f9f9;
+}
+
+.split-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    align-items: center;
+}
+
+.left-content {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+}
+
+.left-content h2 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 2rem;
+}
+
+.left-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.right-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border-left: 5px solid #4a90e2;
+}
+
+.info-card h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.info-card p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.info-card p:last-child {
+    margin-bottom: 0;
+}
+
+.info-card strong {
+    color: #4a90e2;
+}
+
+.info-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .split-content {
+        flex-direction: column;
+    }
+    
+    .left-content, .right-content {
+        width: 100%;
+    }
+}
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
     .nav-links {
