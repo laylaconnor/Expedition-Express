@@ -6,24 +6,7 @@
     <title>How to Pick a Good Destination for Vacation</title>
     <link rel="stylesheet" href="design1.css">
     <link rel="stylesheet" href="design2.css">
-
-    <!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="container">
-        <h1 class="logo">Expedition Express</h1>
-        <ul class="nav-links">
-            <li><a href="index.html" class="">Home</a></li>
-            <li><a href="destinations.html" class="">Destinations</a></li>
-            <li><a href="dining.html" class="">Dining</a></li>
-            <li><a href="activities.html" class="">Activities</a></li>
-            <li><a href="budget.html" class="">Budget</a></li>
-        </ul>
-        <div class="nav-buttons">
-            <button class="btn">Sign In</button>
-        </div>
-    </div>
-</nav>
-
+    <link rel="stylesheet" href="ol.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -54,24 +37,68 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Expedition Express</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html" class="active">Destinations</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn">Sign In</button>
+                <button class="btn primary">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
     <!-- Content Section -->
     <section class="content">
         <div class="container">
-            <!---Map Section-->
-            <div id="map"></div>
-
             <h2>How to Pick a Good Destination for Vacation</h2>
             <p>Choosing the perfect vacation destination can be both exciting and overwhelming. With so many options available, selecting the right place requires careful planning and consideration. A well-chosen destination ensures a fun, relaxing, and memorable experience. Several factors play a crucial role in determining where to go, including who is going, the time of year, interests and hobbies, the weather, budget, and accessibility. This guide will help outline key factors to consider when picking the best vacation spot.</p>
             
             <h2>Pick a location to view on a map</h2>
-            <!--Dropdown of Locations-->
-            <select id="locationSelector">
-                <option value="115.1889,-8.4095" selected>Bali, Indonesia</option> <!-- Default location -->
-                <option value="12.5674,41.8719">Italy</option>
-                <option value="36.2384,30.5852">Jordan</option>
-                <option value="8.2275,46.8182">Switzerland</option>
-                <option value="-86.9427,20.5004">Cozumel, Mexico</option>
-            </select>
+    
+    <a class="skiplink" href="#map">Go to map</a>
+    <div id="map" class="map" tabindex="0"></div>
+    <button id="zoom-out">Zoom out</button>
+    <button id="zoom-in">Zoom in</button>
+
+    <script type="module">
+        import Map from './node_modules/ol/renderer/Map.js';
+    import View from './node_modules/ol/View.js';
+    import TileLayer from './node_modules/ol/layer/Tile.js';
+    import OSM from './node_modules/ol/source/OSM.js';
+
+    const map = new Map({
+        layers: [
+            new TileLayer({
+                source: new OSM(),
+            }),
+        ],
+        target: 'map',
+        view: new View({
+            center: [0, 0],
+            zoom: 2,
+        }),
+    });
+
+    document.getElementById('zoom-out').onclick = function () {
+        const view = map.getView();
+        const zoom = view.getZoom();
+        view.setZoom(zoom - 1);
+    };
+
+    document.getElementById('zoom-in').onclick = function () {
+        const view = map.getView();
+        const zoom = view.getZoom();
+        view.setZoom(zoom + 1);
+    };
+    </script>
 
             <h3>Factors to Consider When Choosing a Vacation Destination</h3>
             
@@ -124,28 +151,6 @@
         </div>
     </section>
     
-    <script src="/Expedition-Express/node_modules/ol/dist/ol.js"></script>
-    <script>
-            const map = new ol.Map({
-                target: 'map',
-                layers: [
-                    new ol.layer.Tile({
-                        source: new ol.source.OSM()
-                    })
-                ],
-                view: new ol.view({
-                    center: ol.proj.fromLonLat([115.2153, -8.3405]), //Default location is Bali
-                    zoom: 10
-                })
-            });
-        
-        const locationSelector = document.getElementById('locationSelector');
-        locationSelector.addEventListener('change', () => {
-            const [lon, lat] = locationSelector.value.split(',').map(Number);
-            //change location 
-            map.getView().setCenter(ol.proj.fromLonLat([lon, lat]));
-            map.getView().setZoom(10);
-        });
-    </script>
+     
 </body>
 </html>
