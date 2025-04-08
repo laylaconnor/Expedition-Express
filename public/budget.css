@@ -1,67 +1,99 @@
-/* Activities Page Styling */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7fa;
-    margin: 0;
-    padding: 0;
+
+/* Destinations Page Styles */
+.destinations-header {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+    text-align: center;
 }
 
-.navbar {
-    background-color: white;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.navbar .logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    color: #0056d2;
-}
-
-.nav-links {
-    list-style-type: none;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li a {
-    text-decoration: none;
-    color: black;
-    padding: 8px 12px;
-    border-radius: 5px;
-}
-
-.nav-links li a.active,
-.nav-links li a:hover {
-    background-color: #e0e7ff;
-    color: #0056d2;
-}
-
-.container {
-    max-width: 1000px;
-    margin: 2rem auto;
-    background-color: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-h1 {
-    color: #0056d2;
-    font-size: 1.8rem;
-}
-
-h2 {
-    font-size: 1.4rem;
+.destinations-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
     color: #333;
-    margin-top: 2rem;
 }
 
-p, li {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.6;
+.destinations-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.featured-destinations {
+    padding: 50px 0;
+    background-color: #fff;
+}
+
+.featured-destinations h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.destination-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: #fff;
+}
+
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-card h4 {
+    padding: 15px 15px 5px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.destination-card p {
+    padding: 0 15px 15px;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.destination-card .btn {
+    margin: 0 15px 15px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s;
+}
+
+.destination-card .btn:hover {
+    background-color: #357ABD;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .destination-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .destinations-header h2 {
+        font-size: 2rem;
+    }
 }
