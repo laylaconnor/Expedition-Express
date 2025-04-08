@@ -57,9 +57,22 @@
     <!-- Content Section -->
     <section class="content">
         <div class="container">
+            <!---Map Section-->
+            <div id="map"></div>
+
             <h2>How to Pick a Good Destination for Vacation</h2>
             <p>Choosing the perfect vacation destination can be both exciting and overwhelming. With so many options available, selecting the right place requires careful planning and consideration. A well-chosen destination ensures a fun, relaxing, and memorable experience. Several factors play a crucial role in determining where to go, including who is going, the time of year, interests and hobbies, the weather, budget, and accessibility. This guide will help outline key factors to consider when picking the best vacation spot.</p>
             
+            <h2>Pick a location to view on a map</h2>
+            <!--Dropdown of Locations-->
+            <select id="locationSelector">
+                <option value="115.1889,-8.4095" selected>Bali, Indonesia</option> <!-- Default location -->
+                <option value="12.5674,41.8719">Italy</option>
+                <option value="36.2384,30.5852">Jordan</option>
+                <option value="8.2275,46.8182">Switzerland</option>
+                <option value="-86.9427,20.5004">Cozumel, Mexico</option>
+            </select>
+
             <h3>Factors to Consider When Choosing a Vacation Destination</h3>
             
             <h4>1. Who Is Going on the Trip?</h4>
@@ -110,5 +123,29 @@
             <p>Picking the right vacation destination involves balancing various factors. Taking the time to research and plan ensures that your trip is enjoyable and hassle-free.</p>
         </div>
     </section>
+    
+    <script src="/Expedition-Express/node_modules/ol/dist/ol.js"></script>
+    <script>
+            const map = new ol.Map({
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                view: new ol.view({
+                    center: ol.proj.fromLonLat([115.2153, -8.3405]), //Default location is Bali
+                    zoom: 10
+                })
+            });
+        
+        const locationSelector = document.getElementById('locationSelector');
+        locationSelector.addEventListener('change', () => {
+            const [lon, lat] = locationSelector.value.split(',').map(Number);
+            //change location 
+            map.getView().setCenter(ol.proj.fromLonLat([lon, lat]));
+            map.getView().setZoom(10);
+        });
+    </script>
 </body>
 </html>
