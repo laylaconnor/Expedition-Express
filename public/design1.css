@@ -84,9 +84,9 @@ body {
 .hero {
     background:  #4a90e2; /* solid background instead of image */
     text-align: center;
-    padding: 100px 20px;
+    padding: 80px 20px;
     color: white;
-    margin-top: 60px;
+    margin-top: 80px;
     border-radius: 10px;
 }
 
