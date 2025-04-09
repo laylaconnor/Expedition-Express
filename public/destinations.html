@@ -68,20 +68,26 @@
             <p>Choosing the perfect vacation destination can be both exciting and overwhelming. With so many options available, selecting the right place requires careful planning and consideration. A well-chosen destination ensures a fun, relaxing, and memorable experience. Several factors play a crucial role in determining where to go, including who is going, the time of year, interests and hobbies, the weather, budget, and accessibility. This guide will help outline key factors to consider when picking the best vacation spot.</p>
             
             <h2>Pick a location to view on a map</h2>
-            <a class="skiplink" href="#map">Go to map</a>
+            <p></p>
      <div id="map"></div>
      <script>
-       var map = L.map('map').setView([51.505, -0.09], 13);
+       var map = L.map('map').setView([47.4116, 28.3699], 7); //Moldova is default coordinates
        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
- 
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);
      </script>
- 
-     <button id="zoom-out">Zoom out</button>
-     <button id="zoom-in">Zoom in</button>
- 
             <h3>Factors to Consider When Choosing a Vacation Destination</h3>
             
             <h4>1. Who Is Going on the Trip?</h4>
