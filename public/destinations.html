@@ -6,7 +6,12 @@
     <title>How to Pick a Good Destination for Vacation</title>
     <link rel="stylesheet" href="design1.css">
     <link rel="stylesheet" href="design2.css">
-    <link rel="stylesheet" href="ol.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/> 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+ integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+ crossorigin=""></script>
 
     <!-- Navigation Bar -->
     <nav class="navbar">
@@ -64,41 +69,19 @@
             
             <h2>Pick a location to view on a map</h2>
             <a class="skiplink" href="#map">Go to map</a>
-     <div id="map" class="map" tabindex="0"></div>
+     <div id="map"></div>
+     <script>
+       var map = L.map('map').setView([51.505, -0.09], 13);
+       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+ 
+     </script>
+ 
      <button id="zoom-out">Zoom out</button>
      <button id="zoom-in">Zoom in</button>
  
-     <script type="module">
-         import Map from './node_modules/ol/renderer/Map.js';
-     import View from './node_modules/ol/View.js';
-     import TileLayer from './node_modules/ol/layer/Tile.js';
-     import OSM from './node_modules/ol/source/OSM.js';
- 
-     const map = new Map({
-         layers: [
-             new TileLayer({
-                 source: new OSM(),
-             }),
-         ],
-         target: 'map',
-         view: new View({
-             center: [0, 0],
-             zoom: 2,
-         }),
-     });
- 
-     document.getElementById('zoom-out').onclick = function () {
-         const view = map.getView();
-         const zoom = view.getZoom();
-         view.setZoom(zoom - 1);
-     };
- 
-     document.getElementById('zoom-in').onclick = function () {
-         const view = map.getView();
-         const zoom = view.getZoom();
-         view.setZoom(zoom + 1);
-     };
-     </script>
             <h3>Factors to Consider When Choosing a Vacation Destination</h3>
             
             <h4>1. Who Is Going on the Trip?</h4>
