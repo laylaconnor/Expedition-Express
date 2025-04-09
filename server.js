@@ -17,9 +17,9 @@ let db;
 (async () => {
   db = await mysql.createConnection({
     host: 'localhost',
-    user: 'root',
-    password: 'Outlander420!',
-    database: 'expedition_express'
+    user: 'youruser',
+    password: 'yourpass',
+    database: 'yourdb'
   });
 })();
 
