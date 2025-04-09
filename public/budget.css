@@ -9,7 +9,7 @@
 .budget-header h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #0056b3;
+    color: white;
 }
 
 .budget-header p {
@@ -23,21 +23,21 @@
 .calculator-section {
     padding: 60px 0;
     padding-top: 100px;
-    background-color: #ffffff;
+    background-color:#4a90e2;
 }
 
 .calculator-section h2 {
     text-align: center;
     font-size: 2.3rem;
     margin-bottom: 15px;
-    color: #0056b3;
+    color: white;
 }
 
 .calculator-section p {
     text-align: center;
     font-size: 1.2rem;
     margin-bottom: 30px;
-    color: #333;
+    color: rgb(4, 25, 76);
 }
 
 .budget-form {
@@ -60,9 +60,9 @@
 
 .budget-form .btn {
     padding: 12px 25px;
-    background-color: #4a90e2;
+    background-color: #022f63;
     color: white;
-    border: none;
+    border: black;
     border-radius: 6px;
     font-size: 1.1rem;
     cursor: pointer;
