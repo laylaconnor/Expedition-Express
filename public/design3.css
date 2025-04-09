@@ -1,0 +1,182 @@
+/* design3.css - Dining Page Specific Styles */
+
+/* Dining Header Section */
+.dining-header {
+    background-color: #f5f5f5;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.dining-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.dining-header p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Featured Dining Experiences */
+.dining-experiences {
+    padding: 50px 0;
+}
+
+.dining-experiences h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Dining Grid Layout */
+.dining-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Dining Card Style */
+.dining-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    background-color: white;
+}
+
+.dining-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dining-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.dining-card h4 {
+    padding: 15px 15px 5px;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.dining-card p {
+    padding: 0 15px 15px;
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.dining-card .cuisine-tag {
+    display: inline-block;
+    background-color: #f0f0f0;
+    color: #555;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin: 0 5px 15px 15px;
+}
+
+.dining-card .btn {
+    margin: 0 15px 15px;
+    display: inline-block;
+}
+
+/* Dining Tips Section */
+.dining-tips {
+    background-color: #f9f9f9;
+    padding: 60px 0;
+}
+
+.tips-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tips-container h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.tip-item {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 4px solid #4a90e2;
+}
+
+.tip-item h4 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.tip-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Local Food Culture Section */
+.food-culture {
+    padding: 60px 0;
+}
+
+.culture-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+}
+
+.culture-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.culture-text h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.culture-text p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: la5px;
+}
+
+.culture-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.culture-image img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .dining-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+    
+    .dining-header h2 {
+        font-size: 2rem;
+    }
+    
+    .culture-container {
+        flex-direction: column;
+    }
+}

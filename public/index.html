@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expedition Express TEST 5</title>
+    <title>Expedition Expressgit</title>
     <link rel="stylesheet" href="design1.css">
 </head>
 <body>
 
-    <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="container">
             <h1 class="logo">Expedition Express</h1>
             <ul class="nav-links">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Destinations</a></li>
-                <li><a href="#">Dining</a></li>
-                <li><a href="#">Activities</a></li>
-                <li><a href="#">Budget</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="budget.html">Budget</a></li>
             </ul>
             <div class="nav-buttons">
                 <button class="btn">Sign In</button>
-                <button class="btn primary">Get Started</button>
             </div>
         </div>
     </nav>
@@ -31,7 +29,8 @@
         <div class="container">
             <h2>Your Journey Begins Here</h2>
             <p>Plan your next adventure with ease.</p>
-            <button class="btn">Start Planning</button>
+            <button class="btn" onclick="location.href='destinations.html'">Start Planning</button>
+
         </div>
     </header>
 
@@ -60,13 +59,28 @@
         </div>
     </section>
 
-    <!-- Travel Planning Info Section -->
-    <section class="travel-info">
-        <div class="container">
-            <h2>Plan a Successful Trip</h2>
-            <p>At Expedition Express, our goal is to help you craft the perfect journey. Whether it's finding the best destinations, exploring delicious cuisines, or budgeting wisely, we provide expert tips and tricks to make your travels stress-free and enjoyable.</p>
+    <!-- Side-by-Side Info Section -->
+<section class="split-info-section">
+    <div class="container">
+        <div class="split-content">
+            <!-- Travel Planning Info Section (Left) -->
+            <div class="left-content">
+                <h2>Plan a Successful Trip</h2>
+                <p>At Expedition Express, our goal is to help you craft the perfect journey. Whether it's finding the best destinations, exploring delicious cuisines, or budgeting wisely, we provide expert tips and tricks to make your travels stress-free and enjoyable.</p>
+            </div>
+            
+            <!-- Site Purpose Explanation Box (Right) -->
+            <div class="right-content">
+                <div class="info-card">
+                    <h3>Welcome to Expedition Express</h3>
+                    <p>This website is designed to provide you with helpful tips and tricks on how to plan a pleasant and memorable trip. We offer guidance on destinations, dining experiences, activities, and budget planning to make your travel preparation easier.</p>
+                    <p>Please note that Expedition Express is <strong>not</strong> a booking service. We don't offer reservations for specific activities or destinations. Instead, we're here to empower you with knowledge and inspiration for your next adventure.</p>
+                    <div class="info-icon">✈️</div>
+                </div>
+            </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- JavaScript for Carousel -->
     <script>
