@@ -9,41 +9,111 @@
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="container">
-        <h1 class="logo">Expedition Express</h1>
-        <ul class="nav-links">
-            <li><a href="index.html" class="">Home</a></li>
-            <li><a href="destinations.html" class="">Destinations</a></li>
-            <li><a href="dining.html" class="">Dining</a></li>
-            <li><a href="activities.html" class="">Activities</a></li>
-            <li><a href="budget.html" class="">Budget</a></li>
-        </ul>
-        <div class="nav-buttons">
-            <button class="btn">Sign In</button>
+    <nav class="navbar">
+        <div class="container">
+            <h1 class="logo">Expedition Express</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn">Sign In</button>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
 <!-- Header -->
 <section class="activities-header">
-    <h2>Exciting Activities to Enhance Your Trip</h2>
-    <p>Discover unique experiences and adventures to make your vacation unforgettable.</p>
-</section>
+    <div class="container">
+      <h2>Explore Fun Vacation Activities</h2>
+      <p>Discover exciting activities to try out during your travels—whether you're into thrill, culture, or chill.</p>
+    </div>
+  </section>
 
 <!-- Activities List Section -->
-<section class="featured-activities">
-    <div class="activity-list">
+<section class="dual-activities">
+    <div class="container two-column-layout">
+      
+      <!-- Column 1: Top Things To Do -->
+      <div class="column column-left">
+        <div class="top-things">
+          <h2>Top Things To Do</h2>
+          <p>Get inspired with popular and enriching activity ideas that will elevate your vacation experience.</p>
+          
+          <div class="activity-list">
+            <h3>Popular Activities</h3>
+            <ul>
+              <li>Zip-lining through tropical forests</li>
+              <li>Guided food and city walking tours</li>
+              <li>Snorkeling or scuba diving</li>
+              <li>Exploring museums and cultural centers</li>
+              <li>Local arts and crafts workshops</li>
+            </ul>
+          </div>
+        </div>
+      
+        <!-- Move image INSIDE the same column -->
+        <div class="activity-illustration">
+          <img src="images/adventure-illustration.png" alt="Adventure Activities">
+        </div>
+      </div>
+      <!-- Column 2: Top Vacation Activities to Consider -->
+      <div class="column">
+        <h2>Top Vacation Activities to Consider</h2>
+        <p>Make the most of your vacation by diving into a range of exciting activities. Whether you're traveling solo, as a couple, or with family, the right activities can transform your trip into an unforgettable experience.</p>
+  
+        <h3>Adventure Activities</h3>
         <ul>
-            <li>City tours with local guides</li>
-            <li>Cooking classes and food tours</li>
-            <li>Extreme sports (skydiving, ziplining)</li>
-            <li>Historical site visits and cultural workshops</li>
-            <li>Nature hikes and wildlife safaris</li>
+          <li>Zip-lining through the rainforest canopy</li>
+          <li>Hiking scenic mountain trails</li>
+          <li>Scuba diving and snorkeling adventures</li>
+          <li>White-water rafting experiences</li>
         </ul>
+  
+        <h3>Relaxation and Wellness</h3>
+        <ul>
+          <li>Beach yoga sessions at sunrise</li>
+          <li>Spa treatments and wellness retreats</li>
+          <li>Meditation and mindfulness workshops</li>
+        </ul>
+  
+        <h3>Cultural Immersion</h3>
+        <ul>
+          <li>Local cooking classes and culinary tours</li>
+          <li>City walking tours and historic landmarks</li>
+          <li>Folk dances and traditional performances</li>
+        </ul>
+      </div>
+  
     </div>
-</section>
+  </section>
+
+<section class="activity-cards">
+    <div class="container">
+      <h2>Featured Experiences</h2>
+      <div class="card-grid">
+        <div class="activity-card">
+          <img src="images/snorkeling.jpg" alt="Snorkeling">
+          <h4>Snorkeling in Crystal Waters</h4>
+          <p>Explore vibrant coral reefs and marine life on guided snorkeling tours.</p>
+        </div>
+        <div class="activity-card">
+          <img src="images/zipline.jpg" alt="Zipline">
+          <h4>Zip-line Adventure</h4>
+          <p>Feel the adrenaline as you soar over lush rainforests or canyons.</p>
+        </div>
+        <div class="activity-card">
+          <img src="images/foodtour.jpg" alt="Food Tour">
+          <h4>Cultural Food Tour</h4>
+          <p>Sample delicious dishes while learning about local food traditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
 
 </body>
 </html>

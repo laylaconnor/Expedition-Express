@@ -1,99 +1,146 @@
-
-/* Destinations Page Styles */
-.destinations-header {
+/* Budget Page Styles */
+.budget-header {
     background-color: #f5f5f5;
     padding: 60px 0;
     text-align: center;
+    margin-top: 80px; /* Matches padding used across other pages */
 }
 
-.destinations-header h2 {
+.budget-header h2 {
     font-size: 2.5rem;
     margin-bottom: 15px;
-    color: #333;
+    color: #0056b3;
 }
 
-.destinations-header p {
+.budget-header p {
     font-size: 1.2rem;
-    color: #666;
+    color: #333;
     max-width: 800px;
     margin: 0 auto;
 }
 
-.featured-destinations {
-    padding: 50px 0;
-    background-color: #fff;
+/* Budget Calculator Section */
+.calculator-section {
+    padding: 60px 0;
+    background-color: #ffffff;
 }
 
-.featured-destinations h3 {
+.calculator-section h2 {
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 40px;
-    color: #333;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    color: #0056b3;
 }
 
-.destination-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
-}
-
-.destination-card {
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    background-color: #fff;
-}
-
-.destination-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.destination-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.destination-card h4 {
-    padding: 15px 15px 5px;
+.calculator-section p {
+    text-align: center;
     font-size: 1.2rem;
+    margin-bottom: 30px;
     color: #333;
 }
 
-.destination-card p {
-    padding: 0 15px 15px;
-    color: #666;
-    font-size: 0.95rem;
-    line-height: 1.5;
+.budget-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.destination-card .btn {
-    margin: 0 15px 15px;
-    display: inline-block;
-    padding: 8px 16px;
+.budget-form input {
+    flex: 1 1 250px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.1rem;
+}
+
+.budget-form .btn {
+    padding: 12px 25px;
     background-color: #4a90e2;
     color: white;
     border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.destination-card .btn:hover {
+.budget-form .btn:hover {
     background-color: #357ABD;
+}
+
+/* Budget Result Styling */
+.budget-result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f1f8ff;
+    border-left: 5px solid #007bff;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+/* Budgeting Tips Section */
+.budget-tips {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.budget-tips h2 {
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+.budget-tips p {
+    font-size: 1.2rem;
+    color: #333;
+    margin: 0 auto 40px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.budget-tips h3 {
+    font-size: 1.6rem;
+    color: #0056b3;
+    margin-top: 30px;
+}
+
+.budget-tips ul {
+    padding-left: 20px;
+    margin-bottom: 30px;
+}
+
+.budget-tips ul li {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.7;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .destination-grid {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    .budget-form {
+        flex-direction: column;
+        align-items: stretch;
     }
-    
-    .destinations-header h2 {
+
+    .calculator-section h2,
+    .budget-tips h2 {
         font-size: 2rem;
+    }
+
+    .budget-form input,
+    .budget-form .btn,
+    .budget-result {
+        font-size: 1rem;
     }
 }

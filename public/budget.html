@@ -1,76 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Budget - Expedition Express</title>
-    <link rel="stylesheet" href="design1.css">
-    <link rel="stylesheet" href="budget.css"> 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Planner - Expedition Express</title>
+  <link rel="stylesheet" href="design1.css" />
+  <link rel="stylesheet" href="budget.css" />
 </head>
 <body>
 
-    <!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="container">
-        <h1 class="logo">Expedition Express</h1>
-        <ul class="nav-links">
-            <li><a href="index.html" class="">Home</a></li>
-            <li><a href="destinations.html" class="">Destinations</a></li>
-            <li><a href="dining.html" class="">Dining</a></li>
-            <li><a href="activities.html" class="">Activities</a></li>
-            <li><a href="budget.html" class="">Budget</a></li>
-        </ul>
-        <div class="nav-buttons">
-            <button class="btn">Sign In</button>
-        </div>
-    </div>
-</nav>
-
-    <!-- Budget Section -->
-    <section class="budget-section">
+    <nav class="navbar">
         <div class="container">
-            <h2>Trip Budget Planning</h2>
-            <p>Estimate your travel expenses by entering your planned trip details below.</p>
-
-            <form class="budget-form">
-                <label for="destination">Destination:</label>
-                <input type="text" id="destination" name="destination" required>
-
-                <label for="days">Number of Days:</label>
-                <input type="number" id="days" name="days" required>
-
-                <label for="accommodation">Accommodation per Night ($):</label>
-                <input type="number" id="accommodation" name="accommodation" required>
-
-                <label for="food">Daily Food Budget ($):</label>
-                <input type="number" id="food" name="food" required>
-
-                <label for="activities">Activities Budget ($):</label>
-                <input type="number" id="activities" name="activities" required>
-
-                <label for="transport">Transport Costs ($):</label>
-                <input type="number" id="transport" name="transport" required>
-
-                <button class="btn" type="button" onclick="calculateBudget()">Calculate</button>
-            </form>
-
-            <div id="budget-output" class="budget-output"></div>
+            <h1 class="logo">Expedition Express</h1>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="dining.html">Dining</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="budget.html">Budget</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button class="btn">Sign In</button>
+            </div>
         </div>
-    </section>
+    </nav>
 
-    <script>
-        function calculateBudget() {
-            const days = parseInt(document.getElementById("days").value) || 0;
-            const accommodation = parseFloat(document.getElementById("accommodation").value) || 0;
-            const food = parseFloat(document.getElementById("food").value) || 0;
-            const activities = parseFloat(document.getElementById("activities").value) || 0;
-            const transport = parseFloat(document.getElementById("transport").value) || 0;
+<!-- Budget Calculator Section -->
+<section class="calculator-section">
+  <div class="container">
+    <h2>Vacation Budget Calculator</h2>
+    <p>Use this calculator to estimate your total trip expenses.</p>
+    
+    <form class="budget-form" id="budgetForm">
+      <input type="text" id="destination" placeholder="Destination" required />
+      <input type="number" id="days" placeholder="Number of Days" required />
+      <input type="number" id="accommodation" placeholder="Accommodation per Night ($)" required />
+      <input type="number" id="food" placeholder="Daily Food Budget ($)" required />
+      <input type="number" id="activities" placeholder="Activities Budget ($)" required />
+      <input type="number" id="transport" placeholder="Transport Costs ($)" required />
+      <button class="btn" type="submit">Calculate</button>
+    </form>
 
-            const total = (accommodation * days) + (food * days) + activities + transport;
-            document.getElementById("budget-output").innerHTML =
-                `<h3>Estimated Trip Cost: $${total.toFixed(2)}</h3>`;
-        }
-    </script>
+    <div id="budget-result" class="budget-result" style="display: none;"></div>
+  </div>
+</section>
 
+<!-- Budgeting Tips Section -->
+<section class="budget-tips">
+  <div class="container">
+    <h2>Budgeting Tips for Every Traveler</h2>
+    <p>
+      Effective budgeting can make your vacation more enjoyable by minimizing stress and maximizing value.
+      Here’s how to plan a trip that fits your financial goals without sacrificing fun.
+    </p>
+
+    <h3>1. Set a Realistic Travel Budget</h3>
+    <ul>
+      <li>Break down costs into categories: transportation, lodging, meals, activities, and emergencies.</li>
+      <li>Use budgeting apps to monitor expenses in real time.</li>
+    </ul>
+
+    <h3>2. Save on Flights and Accommodations</h3>
+    <ul>
+      <li>Book early and use fare comparison tools.</li>
+      <li>Consider alternative lodging like hostels or vacation rentals.</li>
+      <li>Travel during off-peak seasons for discounts.</li>
+    </ul>
+
+    <h3>3. Smart Spending During Your Trip</h3>
+    <ul>
+      <li>Cook some meals instead of dining out every day.</li>
+      <li>Use public transportation and city tourist passes.</li>
+      <li>Look for free walking tours and local events.</li>
+    </ul>
+
+    <p>
+      With thoughtful planning, you can enjoy a dream vacation that’s both memorable and affordable.
+    </p>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("budgetForm");
+    const resultBox = document.getElementById("budget-result");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const destination = document.getElementById("destination").value.trim();
+      const days = parseFloat(document.getElementById("days").value);
+      const accommodation = parseFloat(document.getElementById("accommodation").value);
+      const food = parseFloat(document.getElementById("food").value);
+      const activities = parseFloat(document.getElementById("activities").value);
+      const transport = parseFloat(document.getElementById("transport").value);
+
+      if (!destination || isNaN(days) || isNaN(accommodation) || isNaN(food) || isNaN(activities) || isNaN(transport)) {
+        resultBox.innerHTML = "<p style='color:red;'>Please complete all fields correctly.</p>";
+        resultBox.style.display = "block";
+        return;
+      }
+
+      const total = (accommodation * days) + (food * days) + activities + transport;
+
+      resultBox.innerHTML = `
+        <h3>Estimated Budget for ${destination}</h3>
+        <p><strong>Number of Days:</strong> ${days}</p>
+        <p><strong>Total Cost:</strong> $${total.toFixed(2)}</p>
+      `;
+      resultBox.style.display = "block";
+    });
+  });
+</script>
 </body>
 </html>
