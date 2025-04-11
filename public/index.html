@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expedition Expressgit</title>
     <link rel="stylesheet" href="design1.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -19,11 +21,35 @@
                 <li><a href="budget.html">Budget</a></li>
             </ul>
             <div class="nav-buttons">
-                <button class = "btn" onclick="signInWithGoogle()">Sign in with Google</button>
+                <button class="btn" onclick="signInWithGoogle()">Sign in with Google</button>
                 <script>
-                  function signInWithGoogle() {
-                    window.location.href = 'http://localhost:3000/auth/google';
-                  }
+                    function signInWithGoogle() {
+                        window.location.href = 'http://localhost:3000/auth/google';
+                    }
+
+                    window.onload = function () {
+                        const params = new URLSearchParams(window.location.search);
+                        let token = params.get('token');
+                        let displayName = params.get('displayName');
+
+                        if (token && displayName) {
+                            localStorage.setItem('auth_token', token);
+                            localStorage.setItem('display_name', decodeURIComponent(displayName));
+                        } else {
+                            token = localStorage.getItem('auth_token');
+                            displayName = localStorage.getItem('display_name');
+                        }
+
+                        if (token) {
+                            document.querySelector('.nav-buttons').innerHTML = `<span style="margin-right: 10px;">Welcome, ${displayName || 'User'}!</span><button class="btn" onclick="logout()">Logout</button>`;
+                        }
+                    };
+
+                    function logout() {
+                        localStorage.removeItem('auth_token');
+                        localStorage.removeItem('display_name');
+                        window.location.href = 'http://localhost:3000/logout';
+                    }
                 </script>
             </div>
         </div>
@@ -45,7 +71,7 @@
             <div class="carousel">
                 <button class="carousel-btn prev-btn" onclick="moveSlide(-1)">❮</button>
                 <button class="carousel-btn next-btn" onclick="moveSlide(1)">❯</button>
-                
+
                 <div class="carousel-container">
                     <div class="carousel-slide active">
                         <img src="images/baliVacay.jpg" alt="Bali">
@@ -65,27 +91,33 @@
     </section>
 
     <!-- Side-by-Side Info Section -->
-<section class="split-info-section">
-    <div class="container">
-        <div class="split-content">
-            <!-- Travel Planning Info Section (Left) -->
-            <div class="left-content">
-                <h2>Plan a Successful Trip</h2>
-                <p>At Expedition Express, our goal is to help you craft the perfect journey. Whether it's finding the best destinations, exploring delicious cuisines, or budgeting wisely, we provide expert tips and tricks to make your travels stress-free and enjoyable.</p>
-            </div>
-            
-            <!-- Site Purpose Explanation Box (Right) -->
-            <div class="right-content">
-                <div class="info-card">
-                    <h3>Welcome to Expedition Express</h3>
-                    <p>This website is designed to provide you with helpful tips and tricks on how to plan a pleasant and memorable trip. We offer guidance on destinations, dining experiences, activities, and budget planning to make your travel preparation easier.</p>
-                    <p>Please note that Expedition Express is <strong>not</strong> a booking service. We don't offer reservations for specific activities or destinations. Instead, we're here to empower you with knowledge and inspiration for your next adventure.</p>
-                    <div class="info-icon">✈️</div>
+    <section class="split-info-section">
+        <div class="container">
+            <div class="split-content">
+                <!-- Travel Planning Info Section (Left) -->
+                <div class="left-content">
+                    <h2>Plan a Successful Trip</h2>
+                    <p>At Expedition Express, our goal is to help you craft the perfect journey. Whether it's finding
+                        the best destinations, exploring delicious cuisines, or budgeting wisely, we provide expert tips
+                        and tricks to make your travels stress-free and enjoyable.</p>
+                </div>
+
+                <!-- Site Purpose Explanation Box (Right) -->
+                <div class="right-content">
+                    <div class="info-card">
+                        <h3>Welcome to Expedition Express</h3>
+                        <p>This website is designed to provide you with helpful tips and tricks on how to plan a
+                            pleasant and memorable trip. We offer guidance on destinations, dining experiences,
+                            activities, and budget planning to make your travel preparation easier.</p>
+                        <p>Please note that Expedition Express is <strong>not</strong> a booking service. We don't offer
+                            reservations for specific activities or destinations. Instead, we're here to empower you
+                            with knowledge and inspiration for your next adventure.</p>
+                        <div class="info-icon">✈️</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- JavaScript for Carousel -->
     <script>
@@ -112,4 +144,5 @@
 
 
 </body>
+
 </html>

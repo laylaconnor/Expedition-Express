@@ -20,8 +20,40 @@
                 <li><a href="budget.html">Budget</a></li>
             </ul>
             <div class="nav-buttons">
-                <button class="btn">Sign In</button>
+              <button class="btn" onclick="signInWithGoogle()">Sign in with Google</button>
+              <div class="nav-buttons">
+                <button class="btn" onclick="signInWithGoogle()">Sign in with Google</button>
+                <script>
+                    function signInWithGoogle() {
+                        window.location.href = 'http://localhost:3000/auth/google';
+                    }
+
+                    window.onload = function () {
+                        const params = new URLSearchParams(window.location.search);
+                        let token = params.get('token');
+                        let displayName = params.get('displayName');
+
+                        if (token && displayName) {
+                            localStorage.setItem('auth_token', token);
+                            localStorage.setItem('display_name', decodeURIComponent(displayName));
+                        } else {
+                            token = localStorage.getItem('auth_token');
+                            displayName = localStorage.getItem('display_name');
+                        }
+
+                        if (token) {
+                            document.querySelector('.nav-buttons').innerHTML = `<span style="margin-right: 10px;">Welcome, ${displayName || 'User'}!</span><button class="btn" onclick="logout()">Logout</button>`;
+                        }
+                    };
+
+                    function logout() {
+                        localStorage.removeItem('auth_token');
+                        localStorage.removeItem('display_name');
+                        window.location.href = 'http://localhost:3000/logout';
+                    }
+                </script>
             </div>
+          </div>
         </div>
     </nav>
 
