@@ -39,6 +39,10 @@ To set up the project locally, follow these steps:
    ```
    npm install
    ```
+4. CD into backend folder to get the server running
+    ```
+   cd backend
+   ```
 
 ## Running the Application Locally
 
