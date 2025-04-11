@@ -71,6 +71,30 @@ Here's what the terminal output should look like when you successfully start the
 
 ![image](https://github.com/user-attachments/assets/7f4282c5-4204-4d46-8ebe-85d2861a5b76)
 
+Citation for the Use of AI
+AI Used: ChatGPT (OpenAI), April 2025 version
+
+Prompts Used:
+"Can you help me fix my sign on feature for my website that allows users to sign on with their Google account and then log their account in a MySQL database? We are using Vue.js."
+"Do I need to make the .env file part of the git ignore? Because it keeps saying I can’t commit it due to the client secret."
+
+Functions, Components, Pages, etc. that were affected
+Frontend (index.html):
+Added a Google sign-in button and corresponding JavaScript (signInWithGoogle() function) to trigger OAuth login.
+
+Backend (new server.js created):
+Set up Express server with Passport.js and Google OAuth 2.0 strategy.
+Created /auth/google, /auth/google/callback, and /api/user routes.
+Handled user session via express-session.
+Connected to a MySQL database to insert/fetch user info.
+
+MySQL:
+Suggested a users table schema with fields: id, google_id, name, and email.
+
+Project Root:
+.env file created to store sensitive Google OAuth credentials.
+.gitignore updated to exclude .env.
+
 
 
 ## Project setup
