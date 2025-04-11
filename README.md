@@ -1,4 +1,73 @@
+# Expedition Express
 # my-vue-app
+
+## Project Overview
+
+Expedition Express is a comprehensive trip planning website designed to help users organize the perfect journey. The application provides tips, tools, and resources across several key travel planning areas:
+
+- **Destination Selection**: Explore potential destinations with an integrated Google Maps API
+- **Dining Options**: Learn how to find and select the best dining experiences for your trip
+- **Activities Planning**: Discover popular activities for various destination types
+- **Budget Management**: Use our interactive budget calculator to create a realistic travel budget
+- **User Authentication**: Login to the site
+
+## Technologies Used
+
+- **Frontend**: -Vue.js
+- **Front-end HTTP Server**: Vue CLI development server
+- **APIs**: Maps API
+- **Backend**: Express.js, SQL 
+- **Development**: Node.js, npm, VS Code
+- **Back-end HTTP Server**: Node.js
+
+## Installation
+  (Resource that could help with Vue install. Youtube video)
+  ```
+  https://www.youtube.com/watch?v=P4BmSvAry-c&ab_channel=Codeburst
+  ```
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+   ```
+   git clone https://github.com/laylaconnor/Expedition-Express
+   ```
+
+2. Navigate to the project directory:
+
+3. Install dependencies:
+   ```
+   npm install
+   ```
+
+## Running the Application Locally
+
+Once you've installed the project, you can run it locally by following these steps:
+
+1. Navigate to the project directory in your terminal/command prompt:
+
+   ```
+   example:
+   
+   cd [whatever the path is on your computer to the cloned repository]
+
+   ```
+
+2. Start the development server:
+
+   ```
+   npm run serve
+   ```
+
+3. The application will be available at:
+   - Local: http://localhost:8080/
+   - Network: http://your-ip-address:8080/
+
+Here's what the terminal output should look like when you successfully start the server:
+
+![image](https://github.com/user-attachments/assets/7f4282c5-4204-4d46-8ebe-85d2861a5b76)
+
+
 
 ## Project setup
 ```
@@ -19,6 +88,3 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
